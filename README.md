@@ -16,6 +16,20 @@ A modern terminal-based todo list application built with Rust and ratatui. Doto 
 
 ## Installation
 
+### Quick Install (Recommended)
+
+**Windows (PowerShell):**
+```powershell
+ irm https://github.com/msb090219/doto/releases/latest/download/doto-installer.ps1 | pwsh
+```
+
+**macOS/Linux:**
+```bash
+curl -sSf https://github.com/msb090219/doto/releases/latest/download/install.sh | sh
+```
+
+Then add to PATH if needed and run `doto`!
+
 ### Build from Source
 
 ```bash
@@ -24,13 +38,49 @@ cd doto
 cargo build --release
 ```
 
-The binary will be at `target/release/doto`.
+The binary will be at `target/release/doto`. Add it to your PATH to use `doto` command anywhere.
 
-### Running
+## Usage
+
+### Start the Application
 
 ```bash
-cargo run
+doto
 ```
+
+### Keyboard Controls
+
+**Creating Tasks:**
+- `Shift+T` - Open create modal
+- Type your task text
+- `Enter` to create
+- `Esc` to cancel
+- `Backspace` to delete characters
+- `Ctrl+U` to clear input
+
+**Navigation:**
+- `↑` / `↓` - Move up/down through tasks
+- `q` or `Esc` - Quit application
+
+**Managing Tasks:**
+- `Enter` - Open action menu for selected task
+- `↑` / `↓` - Navigate menu options
+- `Enter` - Select action
+- Options: ✓ Complete, × Delete, ← Cancel
+
+**Task Behavior:**
+- Completed tasks move to bottom automatically
+- New tasks appear at top
+- Auto-saves to `~/.doto/tasks.json`
+
+### Example Workflow
+
+1. Run `doto` in your terminal
+2. Press `Shift+T` to create your first task
+3. Type "Learn Rust" and press `Enter`
+4. Use arrow keys to navigate
+5. Press `Enter` on a task to complete or delete it
+6. Press `q` when done
 
 ## Usage
 
