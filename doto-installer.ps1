@@ -1,4 +1,6 @@
 # Doto Installation Script for Windows
+# This script downloads and installs the latest release of Doto
+
 $ErrorActionPreference = "Stop"
 
 Write-Host "Installing Doto for Windows..." -ForegroundColor Green
@@ -39,6 +41,26 @@ New-Item -ItemType Directory -Force -Path $installDir | Out-Null
 # Download binary
 Invoke-RestMethod -Uri $downloadUrl -OutFile "$installDir\doto.exe"
 
-Write-Host "Doto installed successfully to: $installDir" -ForegroundColor Green
-Write-Host "Add to PATH: $installDir" -ForegroundColor Yellow
-Write-Host "Then run: doto" -ForegroundColor Green
+Write-Host "Doto installed to: $installDir" -ForegroundColor Green
+
+# Check if already in PATH
+$currentPath = [Environment]::GetEnvironmentVariable("Path", "User")
+if ($currentPath -notlike "*$installDir*") {
+    Write-Host ""
+    Write-Host "Adding doto to your PATH..." -ForegroundColor Yellow
+
+    # Add to user PATH
+    [Environment]::SetEnvironmentVariable("Path", "$currentPath;$installDir", "User")
+
+    Write-Host "PATH updated successfully!" -ForegroundColor Green
+    Write-Host ""
+    Write-Host "IMPORTANT: Please restart your terminal for PATH changes to take effect." -ForegroundColor Yellow
+} else {
+    Write-Host "doto is already in your PATH!" -ForegroundColor Green
+}
+
+Write-Host ""
+Write-Host "Installation complete!" -ForegroundColor Green
+Write-Host "Run 'doto' to start using your terminal todo app!" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "If doto doesn't work immediately, restart your terminal." -ForegroundColor Yellow
