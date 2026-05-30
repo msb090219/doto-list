@@ -19,7 +19,7 @@ A modern terminal-based todo list application built with Rust and ratatui. Doto 
 ### Build from Source
 
 ```bash
-git clone https://github.com/yourusername/doto.git
+git clone https://github.com/msb090219/doto.git
 cd doto
 cargo build --release
 ```
