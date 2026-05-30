@@ -8,15 +8,15 @@ A modern terminal-based todo list application built with Rust and ratatui. Doto 
 ## Screenshots
 
 ### Main Interface
-<img width="2372" height="1511" alt="image" src="https://github.com/user-attachments/assets/326d0815-256f-470f-a55e-a5eb41707668" />
+<img width="900" height="580" alt="image" src="https://github.com/user-attachments/assets/326d0815-256f-470f-a55e-a5eb41707668" />
 
 
 ### Creating Tasks
-<img width="2304" height="1558" alt="image" src="https://github.com/user-attachments/assets/5678414c-20aa-4e39-a423-13703b75fe9f" />
+<img width="900" height="580" alt="image" src="https://github.com/user-attachments/assets/5678414c-20aa-4e39-a423-13703b75fe9f" />
 
 
 ### Managing Tasks
-<img width="2254" height="1420" alt="image" src="https://github.com/user-attachments/assets/ffc2634e-c85d-4edb-bcbc-6356a0e03309" />
+<img width="900" height="580" alt="image" src="https://github.com/user-attachments/assets/9bf88732-ef18-46c0-9cee-6bd68e9fcb79" />
 
 
 ## Features
