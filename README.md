@@ -5,6 +5,17 @@ A modern terminal-based todo list application built with Rust and ratatui. Doto 
 ![Rust](https://img.shields.io/badge/Rust-2021%20Stable-orange)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
+## Screenshots
+
+### Main Interface
+**[SCREENSHOT NEEDED: Main Doto interface showing the Nord Frost theme with a few example tasks - maybe "Learn Rust", "Build a project", "Test the app" - showing the clean terminal UI with the task list on the right and the help footer at the bottom]**
+
+### Creating Tasks
+**[SCREENSHOT NEEDED: The create modal (Shift+T) open, showing the input field where you type a new task, with the "Create" and "Cancel" options visible]**
+
+### Managing Tasks
+**[SCREENSHOT NEEDED: The action menu (Enter) open for a selected task, showing the three options: "✓ Complete", "× Delete", "← Cancel"]**
+
 ## Features
 
 - Elegant Nord Frost Theme - Beautiful, easy-on-eyes color palette
@@ -81,15 +92,6 @@ doto
 4. Use arrow keys to navigate
 5. Press `Enter` on a task to complete or delete it
 6. Press `q` when done
-
-## Usage
-
-| Key | Action |
-|-----|--------|
-| `Shift+T` | Open create modal |
-| `↑` / `↓` | Navigate tasks |
-| `Enter` | Open action menu |
-| `q` / `Esc` | Quit / Cancel |
 
 ## Architecture
 

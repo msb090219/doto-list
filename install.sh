@@ -18,6 +18,10 @@ ARCH="$(uname -m)"
 case "$OS" in
     Linux*)     OS="linux";;
     Darwin*)    OS="macos";;
+    MINGW*|MSYS*|CYGWIN*)
+                echo -e "${RED}Please use the PowerShell installer (doto-installer.ps1) on Windows${NC}"
+                echo "Or download the binary directly from GitHub releases"
+                exit 1;;
     *)          echo -e "${RED}Unsupported OS: $OS${NC}"; exit 1;;
 esac
 
