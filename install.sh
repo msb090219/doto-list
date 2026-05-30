@@ -36,15 +36,23 @@ esac
 echo -e "${GREEN}Installing Doto for $OS-$ARCH...${NC}"
 
 # Get latest release info
-LATEST_URL=$(curl -s https://api.github.com/repos/msb090219/doto/releases/latest |
+LATEST_URL=$(curl -s https://api.github.com/repos/msb090219/doto-list/releases/latest |
               grep "browser_download_url" |
               grep "$OS-$ARCH" |
               cut -d '"' -f 4)
 
 if [ -z "$LATEST_URL" ]; then
-    echo -e "${YELLOW}No releases found yet. This is expected for testing.${NC}"
-    echo -e "${YELLOW}The installer will work once you create a GitHub release.${NC}"
-    exit 0
+    echo ""
+    echo -e "${RED}Installation failed: Unable to find releases for doto-list${NC}"
+    echo ""
+    echo -e "${YELLOW}This could mean:${NC}"
+    echo "  1. No releases have been created yet (check GitHub releases page)"
+    echo "  2. The repository name has changed"
+    echo "  3. Network connectivity issues"
+    echo ""
+    echo -e "${YELLOW}Please check the repository and try again.${NC}"
+    echo -e "${CYAN}Repository: https://github.com/msb090219/doto-list${NC}"
+    exit 1
 fi
 
 # Create installation directory

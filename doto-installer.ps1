@@ -11,22 +11,34 @@ Write-Host "Detected architecture: $arch" -ForegroundColor Cyan
 
 # Get latest release info
 Write-Host "Checking for latest release..." -ForegroundColor Yellow
-$latestUrl = "https://api.github.com/repos/msb090219/doto/releases/latest"
+$latestUrl = "https://api.github.com/repos/msb090219/doto-list/releases/latest"
 
 try {
     $releaseInfo = Invoke-RestMethod -Uri $latestUrl
     Write-Host "Found release: $($releaseInfo.name)" -ForegroundColor Green
 }
 catch {
-    Write-Host "No releases found yet. This is expected for testing." -ForegroundColor Yellow
-    Write-Host "The installer will work once you create a GitHub release." -ForegroundColor Yellow
-    exit 0
+    Write-Host ""
+    Write-Host "Installation failed: Unable to find releases for doto-list." -ForegroundColor Red
+    Write-Host ""
+    Write-Host "This could mean:" -ForegroundColor Yellow
+    Write-Host "  1. No releases have been created yet (check GitHub releases page)"
+    Write-Host "  2. The repository name has changed"
+    Write-Host "  3. Network connectivity issues"
+    Write-Host ""
+    Write-Host "Please check the repository and try again." -ForegroundColor Yellow
+    Write-Host "Repository: https://github.com/msb090219/doto-list" -ForegroundColor Cyan
+    exit 1
 }
 
 $asset = $releaseInfo.assets | Where-Object { $_.name -like "*windows-$arch*" } | Select-Object -First 1
 
 if (-not $asset) {
-    Write-Host "Could not find release for windows-$arch" -ForegroundColor Red
+    Write-Host "Installation failed: No binary found for windows-$arch" -ForegroundColor Red
+    Write-Host "Available binaries:" -ForegroundColor Yellow
+    foreach ($a in $releaseInfo.assets) {
+        Write-Host "  - $($a.name)" -ForegroundColor Cyan
+    }
     exit 1
 }
 
