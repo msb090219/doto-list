@@ -190,6 +190,68 @@ doto
 - Make sure your terminal is at least 80x24 characters
 - Resize your terminal window if needed
 
+### App Crashes or Freezes
+
+**Collect debugging info:**
+- Note what you were doing when it crashed
+- Check your terminal size (try 80x24 minimum)
+- Try running with verbose mode if available
+- Check if tasks.json is corrupted (backup and delete to test)
+
+**Quick fixes:**
+- Restart your terminal
+- Delete `~/.doto/tasks.json` and start fresh
+- Try rebuilding from source: `cargo build --release`
+
+## Reporting Issues
+
+Found a bug or have a suggestion? Please report it!
+
+### How to Report Bugs
+
+**📍 Create an Issue:**
+- Go to [GitHub Issues](https://github.com/msb090219/doto/issues)
+- Click "New Issue"
+- Use the Bug Report template if available
+
+### What to Include
+
+**Helpful Information:**
+- Your operating system (Windows/macOS/Linux + version)
+- Terminal emulator (Windows Terminal, iTerm2, etc.)
+- What you were doing when the issue occurred
+- Expected behavior vs actual behavior
+- Error messages (if any)
+- Steps to reproduce the problem
+
+**Debug Information:**
+```bash
+# Run this and include the output:
+doto --version  # if available
+# Or your Rust version:
+rustc --version
+```
+
+### Feature Requests
+
+Have an idea for improving Doto? We'd love to hear it!
+
+- Create a [GitHub Issue](https://github.com/msb090219/doto/issues) with the "enhancement" label
+- Describe the feature and why it would be useful
+- Include examples if possible
+
+### Getting Help
+
+**🆘 Quick Help:**
+- Check the [Troubleshooting](#troubleshooting) section above
+- Search existing [GitHub Issues](https://github.com/msb090219/doto/issues)
+- Read through the [Usage](#usage) section
+
+**📧 Still Stuck?**
+- Open a GitHub Issue with details about your problem
+- Be as specific as possible about what's not working
+- Include your system information and any error messages
+
 ## Data Storage
 
 Your tasks are stored in:
