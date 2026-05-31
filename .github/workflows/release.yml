@@ -63,13 +63,13 @@ jobs:
         with:
           path: artifacts
 
+      - name: List artifacts
+        run: ls -R artifacts
+
       - name: Create release
         uses: softprops/action-gh-release@v1
         with:
-          files: |
-            artifacts/doto-linux-x86_64/*
-            artifacts/doto-macos-x86_64/*
-            artifacts/doto-windows-x86_64.exe/*
+          files: artifacts/**/*
           draft: false
           prerelease: false
           generate_release_notes: true
