@@ -66,10 +66,19 @@ jobs:
       - name: List artifacts
         run: ls -R artifacts
 
+      - name: Rename files
+        run: |
+          mv artifacts/doto-linux-x86_64/doto artifacts/doto-linux-x86_64
+          mv artifacts/doto-macos-x86_64/doto artifacts/doto-macos-x86_64
+          mv artifacts/doto-windows-x86_64.exe/doto.exe artifacts/doto-windows-x86_64.exe
+
       - name: Create release
         uses: softprops/action-gh-release@v1
         with:
-          files: artifacts/**/*
+          files: |
+            artifacts/doto-linux-x86_64
+            artifacts/doto-macos-x86_64
+            artifacts/doto-windows-x86_64.exe
           draft: false
           prerelease: false
           generate_release_notes: true
