@@ -4,6 +4,7 @@ A modern terminal-based todo list application built with Rust and ratatui. Doto 
 
 ![Rust](https://img.shields.io/badge/Rust-2021%20Stable-orange)
 ![License](https://img.shields.io/badge/License-MIT-blue)
+![GitHub release](https://img.shields.io/github/v/release/msb090219/doto-list)
 
 ## Screenshots
 
@@ -39,7 +40,7 @@ The installation scripts will automatically download the latest release and add 
 Open PowerShell and run:
 
 ```powershell
-irm https://github.com/msb090219/doto/releases/latest/download/doto-installer.ps1 | pwsh
+irm https://github.com/msb090219/doto-list/raw/master/doto-installer.ps1 | iex
 ```
 
 **After installation:** Restart your terminal and type `doto` to start using the app.
@@ -49,7 +50,7 @@ irm https://github.com/msb090219/doto/releases/latest/download/doto-installer.ps
 Open Terminal and run:
 
 ```bash
-curl -sSf https://github.com/msb090219/doto/releases/latest/download/install.sh | sh
+curl -sSf https://github.com/msb090219/doto-list/raw/master/install.sh | sh
 ```
 
 **After installation:** Restart your terminal or run `source ~/.zshrc` and type `doto`.
@@ -59,7 +60,7 @@ curl -sSf https://github.com/msb090219/doto/releases/latest/download/install.sh 
 Open your terminal and run:
 
 ```bash
-curl -sSf https://github.com/msb090219/doto/releases/latest/download/install.sh | sh
+curl -sSf https://github.com/msb090219/doto-list/raw/master/install.sh | sh
 ```
 
 **After installation:** Restart your terminal or run `source ~/.bashrc` and type `doto`.
@@ -77,8 +78,8 @@ If you prefer to build from source or want to customize the code:
 
 ```bash
 # Clone the repository
-git clone https://github.com/msb090219/doto.git
-cd doto
+git clone https://github.com/msb090219/doto-list.git
+cd doto-list
 
 # Build the release binary
 cargo build --release
@@ -210,7 +211,7 @@ Found a bug or have a suggestion? Please report it!
 ### How to Report Bugs
 
 **📍 Create an Issue:**
-- Go to [GitHub Issues](https://github.com/msb090219/doto/issues)
+- Go to [GitHub Issues](https://github.com/msb090219/doto-list/issues)
 - Click "New Issue"
 - Use the Bug Report template if available
 
@@ -236,7 +237,7 @@ rustc --version
 
 Have an idea for improving Doto? We'd love to hear it!
 
-- Create a [GitHub Issue](https://github.com/msb090219/doto/issues) with the "enhancement" label
+- Create a [GitHub Issue](https://github.com/msb090219/doto-list/issues) with the "enhancement" label
 - Describe the feature and why it would be useful
 - Include examples if possible
 
@@ -244,7 +245,7 @@ Have an idea for improving Doto? We'd love to hear it!
 
 **🆘 Quick Help:**
 - Check the [Troubleshooting](#troubleshooting) section above
-- Search existing [GitHub Issues](https://github.com/msb090219/doto/issues)
+- Search existing [GitHub Issues](https://github.com/msb090219/doto-list/issues)
 - Read through the [Usage](#usage) section
 
 **📧 Still Stuck?**
